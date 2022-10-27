@@ -1,7 +1,7 @@
 # kata_sql_big_stats
 Petit kata pour apprendre à faire des statistiques sur de très grandes tables, 5M records !
 
-zf221027.1357
+zf221027.1500
 
 # Buts
 Apprendre à sortir des statistiques d'une très grande table, du style plusieurs millions de records (ici 4.7M records).
@@ -64,11 +64,33 @@ On peut avoir un autre appareil, qui va faire une mesures toutes les 2 secondes 
 **Le challenge ici est:**
 
 ## Combien d'appareils différents dans la DB
-Donc de compter le nombre d'appareils différents qui se trouve dans la DB.
+Compter le nombre d'appareils différents qui se trouvent dans la DB.
 
 
 ## Hit parade des appareils
-Sortir le hit parade des 20 appareils qui ont le plus de records dans la DB
+Sortir le hit parade des 20 appareils qui ont le plus de records dans la DB.
+
+La sortie sera sous cette forme:
+
+```
+DEVICE                                cmpt
+------------------------------------  ----------
+sensor.l3_maison_eval_power_consomme  171680
+switch.energy_meter_ldr_1_led         161054
+sensor.l3_maison_courant_consomme     154024
+sensor.sonoff_10013bff51_power        145237
+binary_sensor.energy_meter_ldr_1_pul  138216
+sensor.sonoff_10013bff51_voltage      136519
+sensor.l3_lumieres_1er_ssol_eval_pow  122003
+sensor.sonoff_10013bff51_current      109586
+sensor.l3_lumieres_1er_ssol_courant_  100413
+sensor.maison_power_w                 94575
+sensor.maison_energy_w                94529
+sensor.energy_meter_1_a0              82621
+sensor.maison_l3_power_w              72621
+sensor.maison_l3_energy_w             72571
+sensor.energy_meter_ldr_1_power       56262
+````
 
 
 ## Hit parade des jours de records
