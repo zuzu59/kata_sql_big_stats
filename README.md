@@ -1,7 +1,7 @@
 # kata_sql_big_stats
 Petit kata pour apprendre à faire des statistiques sur de très grandes tables, 5M records !
 
-zf221027.1500
+zf221027.1518
 
 # Buts
 Apprendre à sortir des statistiques d'une très grande table, du style plusieurs millions de records (ici 4.7M records).
@@ -21,7 +21,8 @@ Au moment où on dépasse le million de lignes, il devient difficile de sortir d
 
 # Moyens
 - Utilisation obligatoire d'une base de donnée.
-- Tous les coups sont permis pour avoir le plus d'efficience possible.
+- Utilisation obligatoire d'une console terminal, donc interdit les app WEB ou graphiques style phpmyadmin ou workbench !
+- Après, tous les coups sont permis pour avoir le plus d'efficience possible.
 
 
 ## Critères dévaluation
