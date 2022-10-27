@@ -1,22 +1,23 @@
 # kata_sql_big_stats
-Petit kata pour apprendre à faire des statistiques sur de très grandes tables, 5M records !
+Petit kata SQL pour apprendre à faire des statistiques sur de très grandes tables, 5M records !
 
-zf221027.1518
+zf221027.1729
 
 # Buts
 Apprendre à sortir des statistiques d'une très grande table, du style plusieurs millions de records (ici 4.7M records).
 
-Le but aussi c'est d'utiliser des outils tellement simples que l'on en a oublié leur existence.
+Le but aussi c'est d'utiliser des outils tellement simples que l'on en a oublié leurs existences.
 
-Donc on va chercher l'efficience et non l'efficacité ici !
+Donc on va chercher ici l'**efficience** et non l'**efficacité** !
 
-Quelle différence entre l'efficience et l'efficacité ?
+Quelle différence entre l'*efficience* et l'*efficacité* ?
 
-Par exemple, il y a une mouche sur le mur du salon et que si on utilise un GROS canon pour la tuer, on va être super efficace, car on ne va pas la rater, mais cela aura coûter cher et surtout on aura détruit le salon. Si on prend un petit tape mouches, on sera moins efficace car on risque de rater la mouche, mais beaucoup plus efficient car on n'aura fait aucun dégât dans le salon !
+Par exemple, il y a une mouche sur le mur du salon, si on utilise un GROS canon pour la tuer, on va être super efficace, car on ne va pas la rater, mais cela va coûter cher (le prix du canon et de la munition) et surtout on aura détruit le salon.<br>
+Si on prend un petit tape mouches, on sera moins efficace car on risque de rater la mouche, mais beaucoup plus efficient car on n'aura fait aucun dégât dans le salon !
 
 
 # Problématiques
-Au moment où on dépasse le million de lignes, il devient difficile de sortir des statistiques avec des outils simples style tableurs. On doit alors se diriger vers des outils de style base de données.
+Au moment où on dépasse le million de lignes, il devient difficile de sortir des statistiques avec des outils simples style tableurs. Il est préférable alors se diriger vers des outils de style bases de données.
 
 
 # Moyens
@@ -29,17 +30,22 @@ Au moment où on dépasse le million de lignes, il devient difficile de sortir d
 C'est celui qui aura pris une solution 
 - la plus efficience au niveau ressource informatique
 - le moins de temps pour la mettre en place
+- le moins de lignes de codes
 - le temps d'exécution pour le calcul des résultats
 
 
-## Documentation des résultats
-La procédure pour arriver au résultat du CDC devra être documentée, ligne par ligne, dans un fichier en Markdown. On doit pourvoir en exécutant chaque lignes refaire le kata. 
+## Documentation et sorties des résultats
+Il faut *forker* ce dépôt et indiquer la procédure pour arriver au résultat du CDC, ligne par ligne, dans le fichier RESULTATS.md en  Markdown. 
 
-S'il y a un script ou makefile, c'est un plus, mais pas nécéssaire
+On doit pouvoir, en exécutant chaque lignes, refaire le kata. 
+
+Les résultats seront aussi indiqués dans le fichier !
+
+S'il y a un script ou makefile, c'est un plus.
 
 
 # CDC (Cahier Des Charges)
-Soit une table de 4.7M record d'un enregistreurs d'un système de domotique. Une ligne d'enregistrement de l'état d'un appareil géré dans le système de domotique.
+Soit une table de 4.7M record d'un log d'un système de domotique. 
 
 ```
 I_INDEX,C2,DEVICE,VALUE,C5,C6,C7,TIME,C9,C10,C11,C12,C13,C14,C15
@@ -54,22 +60,18 @@ I_INDEX,C2,DEVICE,VALUE,C5,C6,C7,TIME,C9,C10,C11,C12,C13,C14,C15
 195763726,NULL,sensor.th2_humidite,88.6,NULL,NULL,NULL,2022-10-22 01:02:58,NULL,NULL,1451117,0,01GFYKDTAC05PM2P76GZNX2ZBZ,NULL,NULL
 ```
 
-**Remarque**
-
-*Il y a des colonnes qui ne sont pas utilisables dans ce kata !*
-
-Par exemple si on a une sonde de température qui enregistre la température toute les minutes, on va avoir une ligne avec chaque fois, le nom de l'appareil, sa valeur et la date de la mesure.
+Par exemple, si on a une sonde de température qui enregistre la température toutes les minutes, on va avoir une ligne avec chaque fois, le nom de l'appareil, sa valeur et la date de la mesure.
 
 On peut avoir un autre appareil, qui va faire une mesures toutes les 2 secondes et un autre toutes les 15 minutes. Avec à chaque fois une ligne dans la table.
 
-**Le challenge ici est:**
+### Le challenge ici est:
 
-## Combien d'appareils différents dans la DB
-Compter le nombre d'appareils différents qui se trouvent dans la DB.
+#### Combien d'appareils différents dans les logs ?
+Combien a-t-il d'appareils différents dans les logs ?
 
 
-## Hit parade des appareils
-Sortir le hit parade des 20 appareils qui ont le plus de records dans la DB.
+#### Hit parade des appareils
+Hit parade des 20 appareils qui ont le plus de lignes dans les logs.
 
 La sortie sera sous cette forme:
 
@@ -94,8 +96,8 @@ sensor.energy_meter_ldr_1_power       56262
 ````
 
 
-## Hit parade des jours de records
-Sortir le hit parade des jours qui ont le plus de records dans la DB
+#### Hit parade des jours de records
+Hit parade des jours qui ont le plus de lignes dans les logs.
 
 
 # Données pour le kata
